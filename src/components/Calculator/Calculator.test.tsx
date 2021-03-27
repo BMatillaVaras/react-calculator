@@ -25,4 +25,22 @@ describe("<Calculator/>", () => {
       expect(screen.getByText(operator.toString())).toBeInTheDocument();
     });
   });
+  it("renders equal", () => {
+    render(<Calculator />);
+    const equalSign = "=";
+    expect(screen.getByText(equalSign)).toBeInTheDocument();
+  });
+  it("renders clear sign", () => {
+    render(<Calculator />);
+    const clear = "C";
+    expect(screen.getByText(clear)).toBeInTheDocument();
+  });
+  it("renders an input", () => {
+    render(<Calculator />);
+    expect(screen.getByPlaceholderText("calculate")).toBeInTheDocument();
+  });
+  it("renders an input disabled", () => {
+    render(<Calculator/>);
+    expect(screen.getByPlaceholderText("calculate")).toBeDisabled();
+  })
 });
