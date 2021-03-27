@@ -18,7 +18,7 @@ const Calculator = () => {
               <div role="row">
                 {i === 3 && <button>{clear}</button>}
                 {row.map((n) => (
-                <button key={n}>{n}</button>
+                <button onClick={() => setValue(value.concat(n.toString()))} key={n}>{n}</button>
               ))}
                 {i === 3 && <button>{equalSign}</button>}
               </div>
@@ -26,7 +26,7 @@ const Calculator = () => {
           );
         })}
         {calcOperators.map((c) => (
-          <button key={c}>{c.toString()}</button>
+          <button onClick={() => setValue(value.concat(c))} key={c}>{c.toString()}</button>
         ))}
       </div>
     </div>
